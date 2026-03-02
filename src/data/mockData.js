@@ -3,7 +3,7 @@
 
 export const statsData = {
   totalFarmers: {
-    value: 215,
+    value: 200,
     change: 5,
     changeLabel: "from yesterday",
     trend: "up",

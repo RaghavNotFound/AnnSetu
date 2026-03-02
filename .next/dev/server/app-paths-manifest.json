@@ -1,0 +1,11 @@
+{
+  "/(dashboard)/billing/page": "app/(dashboard)/billing/page.js",
+  "/(dashboard)/farmers/addfarmer/page": "app/(dashboard)/farmers/addfarmer/page.js",
+  "/(dashboard)/farmers/page": "app/(dashboard)/farmers/page.js",
+  "/(dashboard)/inventory/page": "app/(dashboard)/inventory/page.js",
+  "/(dashboard)/iot/page": "app/(dashboard)/iot/page.js",
+  "/(dashboard)/page": "app/(dashboard)/page.js",
+  "/(dashboard)/reports/page": "app/(dashboard)/reports/page.js",
+  "/(dashboard)/settings/page": "app/(dashboard)/settings/page.js",
+  "/login/page": "app/login/page.js"
+}

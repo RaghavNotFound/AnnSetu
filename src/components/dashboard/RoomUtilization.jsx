@@ -1,3 +1,5 @@
+"use client";
+
 import { useMemo } from "react";
 import { MoreHorizontal, TrendingUp } from "lucide-react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";

@@ -1,3 +1,5 @@
+"use client";
+
 import { ChevronRight } from "lucide-react";
 import useFetch from "../../hooks/useFetch";
 import dashboardService from "../../services/dashboardService";

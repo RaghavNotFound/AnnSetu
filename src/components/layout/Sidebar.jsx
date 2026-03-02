@@ -1,4 +1,7 @@
-import { NavLink, useLocation } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
   Users,
@@ -26,11 +29,11 @@ const iconMap = {
 };
 
 export default function Sidebar() {
-  const location = useLocation();
+  const pathname = usePathname();
 
   return (
     <aside
-      className="fixed left-0 top-0 h-screen bg-[#2B3A2B] flex flex-col z-50"
+      className="fixed left-0 top-0 h-screen bg-[#33cc33] flex flex-col z-50"
       style={{ width: 220 }}
     >
       {/* Logo */}
@@ -39,12 +42,12 @@ export default function Sidebar() {
         className="flex items-center justify-center gap-3"
       >
         <div
-          className="rounded-full flex items-center justify-center"
-          style={{ width: 44, height: 44, backgroundColor: "rgba(255,255,255,0.15)" }}
+          className="rounded-full flex items-center justify-center p-2"
+          style={{ width: 44, height: 44, backgroundColor: "rgba(255,255,255,0.0)" }}
         >
-          <Leaf className="text-green-300" style={{ width: 24, height: 24 }} />
+          <img src="/ann-setu-logo.svg" alt="Logo" className="w-full h-full object-contain" />
         </div>
-        <span className="text-white font-bold text-lg tracking-tight">
+        <span className="text-black font-bold text-lg tracking-tight">
           Ann Setu
         </span>
       </div>
@@ -58,16 +61,16 @@ export default function Sidebar() {
           {sidebarMenuItems.map((item) => {
             const Icon = iconMap[item.icon] || LayoutDashboard;
             const isActive =
-              location.pathname === item.path ||
-              (item.path !== "/" && location.pathname.startsWith(item.path));
+              pathname === item.path ||
+              (item.path !== "/" && pathname.startsWith(item.path));
             const isDashboardActive =
-              item.path === "/" && location.pathname === "/";
+              item.path === "/" && pathname === "/";
             const active = isActive || isDashboardActive;
 
             return (
               <li key={item.id}>
-                <NavLink
-                  to={item.path}
+                <Link
+                  href={item.path}
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -78,25 +81,25 @@ export default function Sidebar() {
                     fontWeight: 500,
                     textDecoration: "none",
                     transition: "all 0.2s",
-                    backgroundColor: active ? "rgba(255,255,255,0.15)" : "transparent",
-                    color: active ? "#fff" : "rgba(255,255,255,0.6)",
+                    backgroundColor: active ? "rgba(0,0,0,0.15)" : "transparent",
+                    color: active ? "#000" : "rgba(0,0,0,0.6)",
                   }}
                   onMouseEnter={(e) => {
                     if (!active) {
-                      e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.08)";
-                      e.currentTarget.style.color = "#fff";
+                      e.currentTarget.style.backgroundColor = "rgba(0,0,0,0.08)";
+                      e.currentTarget.style.color = "#000";
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (!active) {
                       e.currentTarget.style.backgroundColor = "transparent";
-                      e.currentTarget.style.color = "rgba(255,255,255,0.6)";
+                      e.currentTarget.style.color = "rgba(0,0,0,0.6)";
                     }
                   }}
                 >
                   <Icon style={{ width: 18, height: 18, flexShrink: 0 }} />
                   <span>{item.label}</span>
-                </NavLink>
+                </Link>
               </li>
             );
           })}
