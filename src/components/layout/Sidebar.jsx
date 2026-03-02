@@ -33,7 +33,7 @@ export default function Sidebar() {
 
   return (
     <aside
-      className="fixed left-0 top-0 h-screen bg-[#33cc33] flex flex-col z-50"
+      className="fixed left-0 top-0 h-screen bg-[#2D5A27] flex flex-col z-50"
       style={{ width: 220 }}
     >
       {/* Logo */}
@@ -47,7 +47,7 @@ export default function Sidebar() {
         >
           <img src="/ann-setu-logo.svg" alt="Logo" className="w-full h-full object-contain" />
         </div>
-        <span className="text-black font-bold text-lg tracking-tight">
+        <span className="text-white font-bold text-lg tracking-tight">
           Ann Setu
         </span>
       </div>
@@ -81,19 +81,19 @@ export default function Sidebar() {
                     fontWeight: 500,
                     textDecoration: "none",
                     transition: "all 0.2s",
-                    backgroundColor: active ? "rgba(0,0,0,0.15)" : "transparent",
-                    color: active ? "#000" : "rgba(0,0,0,0.6)",
+                    backgroundColor: active ? "rgba(255,255,255,0.15)" : "transparent",
+                    color: active ? "#fff" : "rgba(255,255,255,0.7)",
                   }}
                   onMouseEnter={(e) => {
                     if (!active) {
-                      e.currentTarget.style.backgroundColor = "rgba(0,0,0,0.08)";
-                      e.currentTarget.style.color = "#000";
+                      e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)";
+                      e.currentTarget.style.color = "#fff";
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (!active) {
                       e.currentTarget.style.backgroundColor = "transparent";
-                      e.currentTarget.style.color = "rgba(0,0,0,0.6)";
+                      e.currentTarget.style.color = "rgba(255,255,255,0.7)";
                     }
                   }}
                 >
